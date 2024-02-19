@@ -20,7 +20,7 @@ function Login() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Origin: "http://43.203.173.70:8080",
+          Origin: "http://mycamply.shop",
         },
         body: JSON.stringify({
           USER_EMAIL: USER_EMAIL,
