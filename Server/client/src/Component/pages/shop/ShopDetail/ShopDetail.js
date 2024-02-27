@@ -41,7 +41,7 @@ const ShopDetail = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://mycamply.shop:8080/shop/detail/${productId}`
+          `http://mycamply.shop/shop/detail/${productId}`
         );
         setProduct(response.data);
         setUserType(response.data.USER_TYPE);
@@ -89,7 +89,7 @@ const ShopDetail = () => {
       };
 
       const response = await axios.post(
-        "http://mycamply.shop:8080/shop/cart/post",
+        "http://mycamply.shop/shop/cart/post",
         cartData
       );
       alert("상품이 장바구니에 추가되었습니다.");

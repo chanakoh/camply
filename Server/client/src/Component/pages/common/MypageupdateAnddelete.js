@@ -22,7 +22,7 @@ function MyPage() {
       const USER_ID = parseUserIdFromToken(token);
 
       axios
-        .get(`http://mycamply.shop:8080/api/user/get/${USER_ID}`, {
+        .get(`http://mycamply.shop/api/user/get/${USER_ID}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -63,7 +63,7 @@ function MyPage() {
       const USER_ID = parseUserIdFromToken(token);
 
       axios
-        .delete(`http://mycamply.shop:8080/api/user/delete/${USER_ID}`, {
+        .delete(`http://mycamply.shop/api/user/delete/${USER_ID}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -96,7 +96,7 @@ function MyPage() {
       const USER_ID = parseUserIdFromToken(token);
 
       const response = await axios.get(
-        `http://mycamply.shop:8080/api/user/get/${USER_ID}`,
+        `http://mycamply.shop/api/user/get/${USER_ID}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

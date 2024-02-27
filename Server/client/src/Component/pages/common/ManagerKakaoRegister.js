@@ -55,7 +55,7 @@ function ManagerEmailRegister() {
           const email = userInfoResponse.data.kakao_account.email;
           console.log("User Email:", email);
           axios
-            .get(`http://mycamply.shop:8080/api/user/kakao/${email}`)
+            .get(`http://mycamply.shop/api/user/kakao/${email}`)
             .then((response) => {
               const userType = response.data.USER_TYPE;
               console.log("User Type:", userType);

@@ -109,7 +109,7 @@ function GeneralEmailRegister() {
     if (validateForm()) {
       try {
         const response = await fetch(
-          "http://mycamply.shop:8080/api/user/general/register",
+          "http://mycamply.shop/api/user/general/register",
           {
             method: "POST",
             headers: {

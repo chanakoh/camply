@@ -11,7 +11,7 @@ function ReservationCard(props) {
     const fetchCampData = async () => {
       try {
         const response = await axios.get(
-          `http://mycamply.shop:8080/camp/board/get/${props.camp_id}`,
+          `http://mycamply.shop/camp/board/get/${props.camp_id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("yourTokenKey")}`,

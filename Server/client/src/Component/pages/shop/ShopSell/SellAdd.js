@@ -40,7 +40,7 @@ const SellAdd = () => {
     try {
       // 서버로 데이터 전송
       const response = await axios.post(
-        "http://mycamply.shop:8080/api/products",
+        "http://mycamply.shop/api/products",
         formData
       );
 

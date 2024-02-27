@@ -117,7 +117,7 @@ const CampReserve = () => {
             try {
               axios
                 .post(
-                  "http://mycamply.shop:8080/camp/reserve",
+                  "http://mycamply.shop/camp/reserve",
                   {
                     USER_ID: USER_ID,
                     CAMP_CHECKIN: reserveInfo.CAMP_CHECKIN,

@@ -21,7 +21,7 @@ function CampBoardAll() {
     }
 
     axios
-      .get("http://mycamply.shop:8080/camp/board/all", {
+      .get("http://mycamply.shop/camp/board/all", {
         responseType: "arraybuffer",
       })
       .then((response) => {

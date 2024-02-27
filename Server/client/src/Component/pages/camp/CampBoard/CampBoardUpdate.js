@@ -59,7 +59,7 @@ function UpdateBoard() {
 
   useEffect(() => {
     axios
-      .get(`http://mycamply.shop:8080/camp/board/get/${camp_id}`)
+      .get(`http://mycamply.shop/camp/board/get/${camp_id}`)
       .then((response) => {
         setBoardData(response.data);
         const facilityArray = response.data.camp_facility.split(", ");
@@ -97,7 +97,7 @@ function UpdateBoard() {
     }
 
     axios
-      .put(`http://mycamply.shop:8080/camp/board/edit/${camp_id}`, boardData, {
+      .put(`http://mycamply.shop/camp/board/edit/${camp_id}`, boardData, {
         headers: {
           "Content-Type": "application/json",
         },

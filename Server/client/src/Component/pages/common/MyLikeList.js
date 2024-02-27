@@ -24,7 +24,7 @@ function MyPage() {
       console.log("USER_ID : " + USER_ID);
 
       axios
-        .get(`http://mycamply.shop:8080/api/user/get/${USER_ID}`, {
+        .get(`http://mycamply.shop/api/user/get/${USER_ID}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ function MyPage() {
           setLoading(false);
 
           axios
-            .post(`http://mycamply.shop:8080/camp/Mypage/campDipsList`, {
+            .post(`http://mycamply.shop/camp/Mypage/campDipsList`, {
               USER_ID: USER_ID,
             })
             .then((responseData) => {
