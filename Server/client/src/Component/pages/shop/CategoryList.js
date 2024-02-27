@@ -36,7 +36,7 @@ const CategoryList = () => {
         const productData = await Promise.all(
           productCategorys.map(async (productCategory) => {
             const response = await axios.get(
-              `http://mycamply.shop/shop/main/category/${productCategory}`
+              `http://mycamply.shop:8080/shop/main/category/${productCategory}`
             );
             return { category: productCategory, products: response.data };
           })

@@ -14,7 +14,7 @@ const Tent = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://mycamply.shop/shop/category/main/tent`
+          `http://mycamply.shop:8080/shop/category/main/tent`
         );
         setProducts(response.data);
       } catch (error) {

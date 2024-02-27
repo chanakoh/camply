@@ -36,7 +36,7 @@ const Main = () => {
         const endIndex = startIndex + itemsPerPage;
         const productData = await Promise.all(
           productIds.slice(startIndex, endIndex).map(async (productId) => {
-            const response = await axios.get(`http://mycamply.shop:8080/shop/main/view/${productId}`);
+            const response = await axios.get(`http://mycamply.shop:8080:8080/shop/main/view/${productId}`);
             return response.data;
           })
         );

@@ -26,7 +26,7 @@ function CampBoardTent() {
     const encodedCampSelect = encodeURIComponent(camp_select);
 
     axios
-      .get(`http://mycamply.shop/camp/board/category/${encodedCampSelect}`, {
+      .get(`http://mycamply.shop:8080/camp/board/category/${encodedCampSelect}`, {
         responseType: "arraybuffer",
       })
       .then((response) => {

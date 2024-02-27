@@ -26,7 +26,7 @@ const Kakao = () => {
 
         axios
           .post(
-            "http://mycamply.shop/getKakaoUserData",
+            "http://mycamply.shop:8080/getKakaoUserData",
             {
               access_token: access_token,
               email: email,
@@ -39,9 +39,9 @@ const Kakao = () => {
           .then((serverResponse) => {
             localStorage.setItem("yourTokenKey", access_token);
             console.log(serverResponse.data);
-            console.log("http://mycamply.shop/getKakaoUserData 성공");
+            console.log("http://mycamply.shop:8080/getKakaoUserData 성공");
             alert("카카오 로그인 성공");
-            window.location.href = "http://mycamply.shop/";
+            window.location.href = "http://mycamply.shop:8080/";
           })
           .catch((error) => {
             console.error(error);

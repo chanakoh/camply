@@ -66,7 +66,7 @@ const ReviewPost = () => {
     };
 
     try {
-      await axios.post("http://mycamply.shop/shop/review/post", postData);
+      await axios.post("http://mycamply.shop:8080/shop/review/post", postData);
       alert("리뷰가 작성되었습니다.");
       navigate(`/shop/detail/${reviewData.productId}`);
     } catch (error) {

@@ -19,7 +19,7 @@ function ReplyComponent() {
 
   useEffect(() => {
     axios
-      .get(`http://mycamply.shop/board/reply/${camp_id}`)
+      .get(`http://mycamply.shop:8080/board/reply/${camp_id}`)
       .then((response) => {
         setReplyData(response.data);
       })
@@ -57,7 +57,7 @@ function ReplyComponent() {
 
   const handleAddReply = () => {
     axios
-      .post(`http://mycamply.shop/board/reply/add/${camp_id}`, newReply)
+      .post(`http://mycamply.shop:8080/board/reply/add/${camp_id}`, newReply)
       .then(() => {
         setNewReply({
           user_id: userId,
@@ -73,7 +73,7 @@ function ReplyComponent() {
 
   const handleDeleteReply = (replyId) => {
     axios
-      .delete(`http://mycamply.shop/board/reply/delete/${replyId}`)
+      .delete(`http://mycamply.shop:8080/board/reply/delete/${replyId}`)
       .then(() => {
         setReplyData((prevReplies) =>
           prevReplies.filter((reply) => reply.camp_reviewnumber !== replyId)
