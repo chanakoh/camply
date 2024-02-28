@@ -42,79 +42,64 @@
 ## 4. ERD
 <img src="./img/Camply_erd.png"/>
 
-## 5. 시연 영상(https://youtu.be/gsUSwgsf8Ao)
-<img src="./img/main.PNG"/>
+## 5. 화면구현 시안
+<img src="./img/first.png"/>
 
-## 6. 담당 기능
+## 6. [시연 영상](https://youtu.be/gsUSwgsf8Ao)
+[![영상 썸네일](https://github.com/chanakoh/camply/blob/master/img/main.PNG)](https://youtu.be/gsUSwgsf8Ao)
+
+
+## 7. 담당 기능
 
 
 <details>
-<summary><b>핵심 기능 설명 펼치기</b></summary>
+<summary><b>기능 설명 펼치기</b></summary>
 <div markdown="1">
 
-### 5.1. 메인페이지
-<img src="./img/1.png"/>
-- **URL 정규식 체크** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
-  - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
-  - URL의 모양새가 아닌 경우, 에러 메세지를 띄웁니다.
-
-- **Axios 비동기 요청** :pushpin: [코드 확인]()
-  - URL의 모양새인 경우, 컨텐츠를 등록하는 POST 요청을 비동기로 날립니다.
-### 4.2. 사용자 요청
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_vue.png)
-
-- **URL 정규식 체크** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
-  - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
-  - URL의 모양새가 아닌 경우, 에러 메세지를 띄웁니다.
-
-- **Axios 비동기 요청** :pushpin: [코드 확인]()
-  - URL의 모양새인 경우, 컨텐츠를 등록하는 POST 요청을 비동기로 날립니다.
-
-### 4.3. Controller
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_controller.png)
-
-- **요청 처리** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b2c5e60761b6308f14eebe98ccdb1949de6c4b99/src/main/java/goQuality/integerous/controller/PostRestController.java#L55)
-  - Controller에서는 요청을 화면단에서 넘어온 요청을 받고, Service 계층에 로직 처리를 위임합니다.
-
-- **결과 응답** :pushpin: [코드 확인]()
-  - Service 계층에서 넘어온 로직 처리 결과(메세지)를 화면단에 응답해줍니다.
-
-### 4.4. Service
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service1.png)
-
-- **Http 프로토콜 추가 및 trim()** :pushpin: [코드 확인]()
-  - 사용자가 URL 입력 시 Http 프로토콜을 생략하거나 공백을 넣은 경우,  
-  올바른 URL이 될 수 있도록 Http 프로토콜을 추가해주고, 공백을 제거해줍니다.
-
-- **URL 접속 확인** :pushpin: [코드 확인]()
-  - 화면단에서 모양새만 확인한 URL이 실제 리소스로 연결되는지 HttpUrlConnection으로 테스트합니다.
-  - 이 때, 빠른 응답을 위해 Request Method를 GET이 아닌 HEAD를 사용했습니다.
-  - (HEAD 메소드는 GET 메소드의 응답 결과의 Body는 가져오지 않고, Header만 확인하기 때문에 GET 메소드에 비해 응답속도가 빠릅니다.)
-
-  ![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service2.png)
-
-- **Jsoup 이미지, 제목 파싱** :pushpin: [코드 확인]()
-  - URL 접속 확인결과 유효하면 Jsoup을 사용해서 입력된 URL의 이미지와 제목을 파싱합니다.
-  - 이미지는 Open Graphic Tag를 우선적으로 파싱하고, 없을 경우 첫 번째 이미지와 제목을 파싱합니다.
-  - 컨텐츠에 이미지가 없을 경우, 미리 설정해둔 기본 이미지를 사용하고, 제목이 없을 경우 생략합니다.
-
-
-### 4.5. Repository
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_repo.png)
-
-- **컨텐츠 저장** :pushpin: [코드 확인]()
-  - URL 유효성 체크와 이미지, 제목 파싱이 끝난 컨텐츠는 DB에 저장합니다.
-  - 저장된 컨텐츠는 다시 Repository - Service - Controller를 거쳐 화면단에 송출됩니다.
-
+### 7.1. 메인페이지
+<img src="./img/1.png"/><br>
+- **com.camply.shop.main** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/main/controller/MainController.java)
+  - 메인페이지에서 ID값 기준으로 썸네일 노출
+  - Like문을 이용한 상품 검색.
+  - 카테고리를 기준으로 썸네일 노출</br>
+### 7.2. 카테고리페이지
+<img src="./img/2.png"/><br>
+- **com.camply.shop.category** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/category/controller/CategoryController.java)
+  - 카테고리 페이지에서 카테고리 기준으로 모든 상품 썸네일 노출</br>
+### 7.3. 상품 상세페이지
+<img src="./img/3.png"/><br>
+- **com.camply.shop.productdetail** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/productdetail/controller/ProductDetailController.java)
+  - 상품id기준으로 DB에 있는 모든값 가져오기</br>
+### 7.4. 상품 리뷰페이지
+<img src="./img/4.png"/><br>
+<img src="./img/5.png"/><br>
+- **com.camply.shop.productdetail.review/reviewcomment** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/productdetail/controller/ProductDetailController.java)
+  - productId값을 기준으로 전체 후기 가져오기
+  - 수정 시 가져올 수 있도록 후기 가져오기
+  - 후기 작성/수정/삭제
+  - 후기 댓글 조회/작성</br>
+### 7.5. 장바구니 페이지
+<img src="./img/6.png"/><br>
+- **com.camply.shop.cart** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/cart/controller/CartController.java)
+  - 장바구니 버튼 클릭 시 상품정보 가져오기
+  - 작성한 장바구니 값 넣기
+  - userid기준으로 등록한 내 장바구니 상품 보기
+  - 내 장바구니 목록 삭제하기</br>
+ ### 7.6. 결제 페이지
+<img src="./img/7.png"/><br>
+<img src="./img/8.png"/><br>
+- **com.camply.shop.order** :pushpin: [코드 확인](https://github.com/chanakoh/camply/blob/master/Server/src/main/java/com/camply/shop/order/controller/OrderController.java)
+  - 주문정보 저장</br>
 </div>
 </details>
 
 </br>
 
+## 8. 느낀점
+처음 프로젝트 계획 단계에서는 팀원 5명 중 4명이 백엔드 개발을 담당하고 1명만이 프론트엔드를 맡기로 결정했습니다. 이러한 배분은 초기에는 타당해 보였으나, 실제 개발 과정에 들어가 보니 프론트엔드 담당자 한 명만으로는 모든 페이지의 구현이 현실적으로 불가능하다는 것을 깨달았습니다. 결국, 각 팀원은 자신이 담당하는 페이지에 대해 리액트를 이용한 프론트엔드 기능 개발까지 책임지게 되었습니다.
 
+프로젝트를 진행하면서 또 다른 주요 깨달음은, 초기 회의에서 논의된 내용이 주로 백엔드 관련 사항에 초점을 맞추었다는 점입니다. 하지만 실제로 프로젝트를 진행해보니 리액트를 통한 프론트엔드 개발 작업이 전체 개발 일정의 약 70%를 차지할 정도로 큰 비중을 차지했습니다. 이는 프론트엔드 개발의 중요성과 시간 소요를 초기 계획 단계에서 충분히 인식하지 못했음을 반영합니다.
 
-## 6. 회고 / 느낀점
->프로젝트 개발 회고 글: https://zuminternet.github.io/ZUM-Pilot-integer/
+또한, 서버 측면에서 데이터베이스 처리에 소요되는 시간이나, 레디스를 활용한 임시 데이터 처리 기능과 같은 추가 개발이 필요한 부분에 대해서도 인식하게 되었습니다. 이러한 경험은 향후 개발 프로젝트를 계획하고 진행할 때 보다 균형 잡힌 시각을 갖고 접근하는 데 중요한 교훈이 되었습니다.
+
+이 프로젝트를 통해 팀원 간의 협력과 각 분야의 중요성을 다시 한번 깨닫는 계기가 되었으며, 앞으로의 개발 프로젝트에 있어 이러한 경험이 소중한 자산이 될 것입니다.
