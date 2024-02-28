@@ -42,7 +42,7 @@
 ## 4. ERD
 <img src="./img/Camply_erd.png"/>
 
-## 5. 시연 영상
+## 5. 시연 영상(https://youtu.be/gsUSwgsf8Ao)
 <img src="./img/main.PNG"/>
 
 ## 6. 담당 기능
